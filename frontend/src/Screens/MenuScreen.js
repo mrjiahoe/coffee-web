@@ -1,4 +1,4 @@
-import "./ProductScreen.css";
+import "./MenuScreen.css";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProductDetails } from "../redux/actions/productActions";
 import { addToCart } from "../redux/actions/cartActions";
 
-const ProductScreen = ({ match, history }) => {
+const MenuScreen = ({ match, history }) => {
 	const [qty, setQty] = useState(1);
 	const dispatch = useDispatch();
 
@@ -21,7 +21,7 @@ const ProductScreen = ({ match, history }) => {
 
 	const addtoCartHandler = () => {
 		dispatch(addToCart(product._id, qty));
-		history.push("/cart");
+		history.push("/menu");
 	};
 
 	return (
@@ -78,4 +78,4 @@ const ProductScreen = ({ match, history }) => {
 	);
 };
 
-export default ProductScreen;
+export default MenuScreen;

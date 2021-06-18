@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 // Components
 import Product from "../components/Product";
+import Hero from "../components/Hero";
+import { SliderData as sliders } from "../components/SliderData";
 
 // Actions
 import { getProducts as listProducts } from "../redux/actions/productActions";
@@ -19,26 +21,29 @@ const HomeScreen = () => {
 	}, [dispatch]);
 
 	return (
-		<div className="homescreen">
-			<h2 className="homescreen__title">Latest Products</h2>
+		<div>
+			<Hero slides={sliders} />
+			<div className="homescreen">
+				<h2 className="homescreen__title">Latest Products</h2>
 
-			<div className="homescreen__products">
-				{loading ? (
-					<h2>Loading...</h2>
-				) : error ? (
-					<h2>{error}</h2>
-				) : (
-					products.map((product) => (
-						<Product
-							key={product._id}
-							productId={product._id}
-							name={product.name}
-							price={product.price}
-							description={product.description}
-							imageUrl={product.imageUrl}
-						/>
-					))
-				)}
+				<div className="homescreen__products">
+					{loading ? (
+						<h2>Loading...</h2>
+					) : error ? (
+						<h2>{error}</h2>
+					) : (
+						products.map((product) => (
+							<Product
+								key={product._id}
+								productId={product._id}
+								name={product.name}
+								price={product.price}
+								description={product.description}
+								imageUrl={product.imageUrl}
+							/>
+						))
+					)}
+				</div>
 			</div>
 		</div>
 	);

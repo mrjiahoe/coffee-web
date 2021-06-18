@@ -1,7 +1,10 @@
+/* div {
+    height: 100vh;
+} */
 
 .product {
     width: 300px;
-    /* height: auto; */
+    /* height: 350px; */
     padding: 1rem;
     background: #fff;
     box-shadow: 0 1px 4px rgba(0,0,0,0.4);
@@ -12,15 +15,8 @@
 }
 
 .product > img {
-    height: 200px;
+    height: 170px;
     border-radius: 8px;
-}
-
-.product__image {
-    height: 200px;
-    overflow: hidden;
-    border-radius: 8px;
-    align-items: flex-end;
 }
 
 .product__info > p {
@@ -32,12 +28,8 @@
 }
 
 .info__name {
-    text-decoration: none;
-    color: black;
-    padding-top: 5px;
     font-size: 1rem;
     overflow: hidden;
-    cursor: pointer;
 }
 
 .info__description {
